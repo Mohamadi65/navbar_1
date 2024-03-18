@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto',sans-serif;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    background: url('./img/woman.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    color: white;
+    font-weight: 500;
+    overflow: hidden;
+}
+a{
+    color: #fff;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+#icons{
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width:600px){
+    #icons{
+        display: block;
+        
+    }
+
+    #icons::before{
+        content: "\2630";
+        font-size: 1.5rem; 
+    }
+
+    .active #icons::before{
+        content: '\2715';
+        font-size: 1.5rem; 
+    }
+
+    nav ul {
+        position: fixed;
+        top:10% ;
+        left: -100%;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        transition:0.5s ;
+        backdrop-filter:blur(40px);
+    }
+
+    nav li a:hover{
+        border-bottom: 2px solid yellow;
+        transition: 0.1s;
+    }
+
+    nav li{
+     
+        padding: 3px 0;
+    }
+
+    nav.active ul{
+        left: 0;
+    }
+ 
+}
